@@ -5,10 +5,12 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
     'Angular',
     'Node'
 	];
-	
+	$scope.cardsLoaded = false;
+
 	$scope.getFlashCards = function(category){
 		$scope.activeCategory = category;
 		FlashCardsFactory.getFlashCards(category).then(function(cards){
+			$scope.cardsLoaded = true;
 			$scope.flashCards = cards;
 			return cards;
 		})
