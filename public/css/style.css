@@ -1,6 +1,12 @@
 * {
   box-sizing: border-box; }
 
+.hovering {
+  border-color: green;
+  border-width: 10px;
+  border-style: solid;
+}
+
 .category-button {
   border: 1px solid black;
   background: none;

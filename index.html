@@ -11,6 +11,7 @@
         <script src="js/controllers/statsController.js"></script>
         <script src="js/directives/loader/loader.js"></script>
         <script src="js/directives/flashCards/flashCards.js"></script>
+        <script src="js/directives/borderOnHover/borderOnHover.js"></script>
     </head>
     <body ng-app="flashCards" >
       <div id="statistics" ng-include = "'template/stats.html'" >
@@ -22,19 +23,8 @@
           <loader ng-show="!cardsLoaded"></loader>
         </div>
         <div ng-repeat="card in flashCards | orderBy : 'question'" class="flash-card" ng-class = "{{}}">
-          <flash-card></flash-card>
+          <flash-card card="card" border-on-hover></flash-card>
         </div>
-        <!-- <div ng-repeat="flashCard in flashCards | orderBy : 'question'" class="flash-card" ng-class = "{{}}">
-          <h1>{{ flashCard.question | uppercase }}</h1>
-          <h1>Category: {{flashCard.category}}</h1>
-          <ul class="flash-card-answers">
-    	    	<li ng-repeat="answer in flashCard.answers" class="flash-card-answer" ng-click="answerQuestion(answer, flashCard)">{{ answer.text }}</li>
-    	    </ul>
-    	    <h2 class="answer-feedback" ng-class="flashCard.answeredCorrectly ? 'correct' : 'incorrect'"ng-show="flashCard.answered">
-    	        <span ng-show="flashCard.answeredCorrectly">Yeah, you got it right!</span>
-    	        <span ng-show="!flashCard.answeredCorrectly">Nope, you got it wrong.</span>
-    	    </h2>
-        </div> -->
       </div>
     </body>
 </html>
