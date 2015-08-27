@@ -19,7 +19,7 @@
 
 .flash-card {
   width: 60%;
-  height: 400px;
+  height: auto;
   margin: 0 auto;
   margin-top: 40px;
   border: 1px solid black;
@@ -55,6 +55,7 @@
       margin-right: 0; }
 
 .answer-feedback {
+  display: block;
   text-align: center;
   margin-top: 50px;
   font-weight: bold; }

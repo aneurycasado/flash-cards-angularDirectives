@@ -3,13 +3,17 @@ app.directive("borderOnHover", function () {
 		restrict: "A",
 		link: function (scope, element, attribute) {
 			element.on("mouseenter", function () {
-				console.log(element);
-				angular.element(element[0].parentNode).css("border", "10px solid green");
+				if (!scope.card.answered) {
+					angular.element(element[0].parentNode).css("border", "10px solid blue");
+				}
 			});
 			element.on("mouseleave", function () {
-				console.log(element);
-				angular.element(element[0].parentNode).css("border", "1px solid black");
+				//console.log(element);
+				if (!scope.card.answered) {
+					angular.element(element[0].parentNode).css("border", "1px solid black");
+				}
 			});
+
 		}
 	};
 });
